@@ -10644,63 +10644,77 @@ a.text-dark:focus {
   }
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #0d90e7;
+.admin .admin-menu {
+  flex-flow: column;
+  background: #020024;
+  background: linear-gradient(0deg, #020024 0%, #add8e3 0%, #01c4f4 50%);
+  padding: 2rem;
+  border-right: 2px dashed #000000;
+  height: -webkit-fill-available;
+}
+
+.admin .admin-menu h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.admin .admin-menu button {
+  width: 100%;
+  border: none;
+  background-color: #328894;
+  color: #ffffff;
+}
+
+.admin .admin-menu button:hover {
+  background-color: #225b63;
+}
+
+.admin .admin-menu button:focus {
+  outline: none;
+}
+
+.admin .admin-content {
   padding: 2rem;
 }
 
-.header input {
-  width: 10em;
-  border-radius: 5px;
+.admin .admin-content form input,
+.admin .admin-content form textarea,
+.admin .admin-content form button {
+  display: block;
   font-family: monospace;
-  height: 32px;
-  border-style: unset;
+  width: 250px;
+  border-radius: 5px;
 }
 
-.header button {
-  display: block;
+.admin .admin-content form input {
+  height: 32px;
+  margin: 1rem 0;
+  border: 1px solid darkgray;
+}
+
+.admin .admin-content form input[type=file] {
+  height: 100%;
+}
+
+.admin .admin-content form textarea {
+  height: 200px;
+}
+
+.admin .admin-content form input[type=submit] {
   margin-top: 1rem;
   height: 32px;
   background-color: #ffffff;
   color: #461cdb;
   border: 2px solid #461cdb;
-  border-radius: 5px;
   transition: box-shadow 0.5s, color 0.5s;
 }
 
-.header button:hover {
-  box-shadow: inset 10em 0px #461cdb;
+.admin .admin-content form input[type=submit]:hover {
+  box-shadow: inset 250px 0px #461cdb;
   color: #ffffff;
 }
 
-.header button:focus {
+.admin .admin-content form input[type=submit]:focus {
   outline: none;
-}
-
-.banners {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.banners .carousel-control-prev {
-  left: 3%;
-}
-
-.banners .carousel-control-next {
-  right: 3%;
-}
-
-.posts {
-  justify-content: center;
-}
-
-.posts .post {
-  margin: 0.5rem;
-  border: 1px dashed #797777;
-  max-width: 400px;
 }
 

@@ -1,34 +1,68 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+$input-width: 10em;
+
 // App
-.login {
+// Header
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #0d90e7;
+    padding: 2rem;
 
     input {
-        display: block;
-        width: 15em;
+        width: $input-width;
+        border-radius: 5px;
+        font-family: monospace;
+        height: 32px;
+        border-style: unset;
     }
 
     button {
+        display: block;
         margin-top: 1rem;
-        width: 15em;
-        height: 40px;
-        padding: 5px 0;
+        height: 32px;
         background-color: #ffffff;
         color: #461cdb;
         border: 2px solid #461cdb;
+        border-radius: 5px;
         transition: box-shadow 0.5s, color 0.5s;
 
         &:hover {
-            box-shadow: inset 15em 0px #461cdb;
+            box-shadow: inset $input-width 0px #461cdb;
             color: #ffffff;
         }
 
         &:focus {
             outline: none;
         }
+    }
+}
+
+// Banners
+.banners {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+
+    .carousel-control-prev {
+        left: 3%;
+    }
+
+    .carousel-control-next {
+        right: 3%;
+    }
+}
+
+// Posts
+.posts {
+    justify-content: center;
+    
+    .post {
+        margin: 0.5rem;
+        border: 1px dashed #797777;
+        max-width: 400px;
     }
 }

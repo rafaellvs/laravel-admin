@@ -10,14 +10,10 @@
 |
 */
 
-use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'FrontController@index');
 
-Route::post('/', function(Request $request) {
-    return view('jansen', [
-        'request' => $request->all()
-    ]);
-});
+// Admin
+Route::post('/admin', 'AdminController@login');
+Route::get('/admin/posts', 'PostsController@get');
+Route::post('/admin/createpost', 'PostsController@create');
