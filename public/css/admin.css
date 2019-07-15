@@ -10663,6 +10663,7 @@ a.text-dark:focus {
   border: none;
   background-color: #328894;
   color: #ffffff;
+  margin: 0.5rem 0;
 }
 
 .admin .admin-menu button:hover {
@@ -10675,6 +10676,31 @@ a.text-dark:focus {
 
 .admin .admin-content {
   padding: 2rem;
+}
+
+.admin .admin-content .btns {
+  display: flex;
+}
+
+.admin .admin-content .btns .btn {
+  display: block;
+  width: 100px;
+  margin-top: 1rem;
+  height: 32px;
+  background-color: #ffffff;
+  color: #461cdb;
+  border: 2px solid #461cdb;
+  border-radius: 5px;
+  transition: box-shadow 0.5s, color 0.5s;
+}
+
+.admin .admin-content .btns .btn:hover {
+  box-shadow: inset 100px 0px #461cdb;
+  color: #ffffff;
+}
+
+.admin .admin-content .btns .btn:focus {
+  outline: none;
 }
 
 .admin .admin-content form input,
@@ -10716,5 +10742,31 @@ a.text-dark:focus {
 
 .admin .admin-content form input[type=submit]:focus {
   outline: none;
+}
+
+.admin .admin-content .posts .post {
+  display: flex;
+  align-items: center;
+  border: 1px dashed #726969;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.admin .admin-content .posts .post .post-title {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.admin .admin-content .posts .post .post-body {
+  max-width: 400px;
+  max-height: 50px;
+  margin-right: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.admin .admin-content .posts .post .post-image {
+  max-width: 50px;
 }
 

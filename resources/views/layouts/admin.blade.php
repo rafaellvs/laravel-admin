@@ -19,11 +19,15 @@
                 <a href="/admin/posts">
                     <button type="button">Posts</button>
                 </a>
+
+                <a href="/admin/banners">
+                    <button type="button">Banners</button>
+                </a>
             </div>
             
             <div class="col-9 admin-content">
                 <h1>Admin panel</h1>
-
+                
                 @yield('content')
             </div>
         </div>

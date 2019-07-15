@@ -10,10 +10,9 @@
         </div>
         
         <div class="col-3">
-            @if(isset($loginFailed))
+            @if(session('loginFailed'))
                 <p style="color: red; font-weight: bold; margin: 0;">Dados incorretos.</p>
             @endif
-            
             
             <form action="/admin" method="POST">
                 {{ csrf_field() }}
@@ -34,17 +33,17 @@
         <div class="col-10 text-center">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    @foreach ($banners as $banner)
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" @if($loop->first) class="active" @endif></li>
+                    @endforeach
                 </ol>
 
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="{{ asset('images/banner-1.png') }}" alt="First slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('images/banner-2.png') }}" alt="Second slide">
-                  </div>
+                    @foreach ($banners as $banner)
+                        <div class="carousel-item @if($loop->first) active @endif">
+                            <img src="{{ asset($banner->image) }}">
+                        </div>
+                    @endforeach
                 </div>
 
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -63,18 +62,42 @@
 
 <!-- POSTS -->
 <section  class="container-fluid">
-    <div class="row">
+    <div class="row posts">
         <div class="col-12 text-center">
             <h1>Posts</h1>
 
-            <div class="row posts">
-                @foreach ($posts as $post)
-                    <div class="col-4 post">
-                        <h4>{{ $post->title }}</h4>
-                        <p>{{ $post->body }}</p>
+            <div class="row justify-content-center">
+                @if( $posts->isEmpty() )
+                    <div class="col-8 text-center">
+                        <p>No posts to show.</p>
                     </div>
-                @endforeach    
+                @else
+                    @foreach ($posts as $post)
+                        <div class="col-4 post">
+                            <img src="{{ asset($post->image) }}">
+                            <h4>{{ $post->title }}</h4>
+                            <p>{{ $post->body }}</p>
+                        </div>
+                    @endforeach    
+                @endif
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<section class="container-fluid">
+    <div class="row footer">
+        <div class="col-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint blanditiis voluptate ad, provident aspernatur natus corporis asperiores omnis dignissimos quibusdam suscipit accusantium praesentium ea laboriosam rerum quisquam hic earum debitis.
+        </div>
+
+        <div class="col-2">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twister</a>
+            <a href="#" target="_blank">Linkedin</a>
+            <a href="#" target="_blank">Jansen</a>
+            <a href="#" target="_blank">Insta</a>
         </div>
     </div>
 </section>

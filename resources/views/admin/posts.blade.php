@@ -2,19 +2,38 @@
 
 @section('content')
 
-<h3>Create post</h3>
+<section class="container-fluid">
+    <div class="row posts">
+        <div class="col-12" style="padding: 0;">
+            <h2>Posts</h2>
+        </div>
 
-@if(session('created'))
-    <p style="color: green; margin: 0;">Post successfully created.</p>
-@endif
+        @if($posts->isEmpty())
+            <div class="col-12">
+                <p>No posts on database.</p>
+            </div>
+        @else
+            @foreach ($posts as $post)
+                <div class="col-8 post">
+                    <div class="post-title">{{ $post->title }}</div>
 
-<form action="/admin/createpost" method="POST" enctype="multipart/form-data">
-    @csrf
+                    <div class="post-body">{{ $post->body }}</div>
 
-    <input type="text" name="title" placeholder="Title">
-    <textarea name="body" placeholder="Body"></textarea>
-    <input type="file" name="image" accept=".jpg, .jpeg, .png">
-    <input type="submit" value="create">
-</form>
+                    <img src="{{ asset($post->image) }}" class="post-image" />
+
+                    <div class="btns">
+                        <a href="#">
+                            <button type="button" class="btn">edit</button>
+                        </a>
+    
+                        <a href="#">
+                            <button type="button" class="btn">delete</button>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        @endif
+    </div>
+</section>
 
 @stop

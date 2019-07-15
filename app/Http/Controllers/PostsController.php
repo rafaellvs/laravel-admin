@@ -8,16 +8,20 @@ use App\Post;
 class PostsController extends Controller
 {
     public function get() {
-        return view('admin.posts');
+        $posts = Post::all();
+
+        return view('admin.posts', [
+            'posts' => $posts
+        ]);
     }
 
     public function create(Request $r) {
         Post::create([
             'title' => request('title'),
             'body' => request('body'),
+            'image' => '/storage/'.request()->file('post-image')->store('post-images')
         ]);
-        
-        dd($r->image);
+
         return redirect('/admin/posts')->with('created', true);
     }
 }
