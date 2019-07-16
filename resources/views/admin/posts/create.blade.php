@@ -4,11 +4,7 @@
 
 <h3>Create post</h3>
 
-@if(session('created'))
-    <p style="color: green; margin: 0;">Post successfully created.</p>
-@endif
-
-<form action="/admin/createpost" method="POST" enctype="multipart/form-data">
+<form action="/admin/posts" method="POST" enctype="multipart/form-data">
     @csrf
 
     <input type="text" name="title" placeholder="Title">

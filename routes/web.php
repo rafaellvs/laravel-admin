@@ -17,8 +17,13 @@ Route::get('/', 'FrontController@index');
 Route::post('/admin', 'AdminController@login');
 
 // Posts
-Route::get('/admin/posts', 'PostsController@get');
-Route::post('/admin/createpost', 'PostsController@create');
+Route::get('/admin/posts', 'PostsController@index');
+Route::post('/admin/posts', 'PostsController@store');
+Route::get('/admin/posts/create', 'PostsController@create');
+Route::get('/admin/posts/{post}', 'PostsController@show');
+Route::get('/admin/posts/{post}/edit', 'PostsController@edit');
+Route::patch('/admin/posts/{post}', 'PostsController@update');
+Route::delete('/admin/posts/{post}', 'PostsController@destroy');
 
 // Banners
 Route::get('/admin/banners', 'BannersController@get');

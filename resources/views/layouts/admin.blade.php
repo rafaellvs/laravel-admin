@@ -14,6 +14,10 @@
     <section class="container-fluid">
         <div class="row admin">
             <div class="col-2 admin-menu">
+                <a href="/">
+                    <button type="button">home</button>
+                </a>
+
                 <h1>Menu</h1>
                 
                 <a href="/admin/posts">

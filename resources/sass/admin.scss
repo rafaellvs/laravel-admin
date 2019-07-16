@@ -35,31 +35,28 @@
     .admin-content {
         padding: 2rem;
 
-        .btns {
-            display: flex;
-            
-            .btn {
-                display: block;
-                width: 100px;
-                margin-top: 1rem;
-                height: 32px;
-                background-color: #ffffff;
-                color: #461cdb;
-                border: 2px solid #461cdb;
-                border-radius: 5px;
-                transition: box-shadow 0.5s, color 0.5s;
+        .btn-default {
+            display: block;
+            font-family: monospace;
+            width: 150px;
+            border-radius: 5px;
+            margin: 1rem 0;
+            height: 32px;
+            background-color: #ffffff;
+            color: #461cdb;
+            border: 2px solid #461cdb;
+            transition: box-shadow 0.5s, color 0.5s;
     
-                &:hover {
-                    box-shadow: inset 100px 0px #461cdb;
-                    color: #ffffff;
-                }
+            &:hover {
+                box-shadow: inset 150px 0px #461cdb;
+                color: #ffffff;
+            }
     
-                &:focus {
-                    outline: none;
-                }
+            &:focus {
+                outline: none;
             }
         }
-        
+
         form {
             input, textarea, button {
                 display: block;
@@ -112,11 +109,11 @@
                 .post-title {
                     font-weight: bold;
                     margin-right: 1rem;
+                    width: 200px;
                 }
 
                 .post-body {
-                    max-width: 400px;
-                    max-height: 50px;
+                    width: 400px;
                     margin-right: 1rem;
                     overflow: hidden;
                     white-space: nowrap;
@@ -124,9 +121,96 @@
                 }
 
                 .post-image {
-                    max-width: 50px;
+                    width: 50px;
+                }
+
+                .btns {
+                    display: flex;
+                    flex: 1;
+                    text-align: -webkit-right;
                 }
             }
         }
+
+        .post-show {
+            border: 1px dashed #797777;
+            max-width: 400px;
+            padding: 1rem;
+            text-align: center;
+    
+            img {
+                width: 250px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .btns-show {
+            display: flex;
+            justify-content: space-around;
+            max-width: 400px;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.btn {
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: box-shadow 0.5s, color 0.5s;
+    margin: 0 0.5rem;
+    
+    &.show {
+        color: #1c95db;
+        border: 2px solid #1c95db;
+
+        &:hover {
+            box-shadow: inset 100px 0px #1c95db;
+            color: #ffffff;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    
+    &.edit {
+        color: #dbce1c;
+        border: 2px solid #dbce1c;
+
+        &:hover {
+            box-shadow: inset 100px 0px #dbce1c;
+            color: #ffffff;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &.delete {
+        color: #db1c1c;
+        border: 2px solid #db1c1c;
+        width: 100px !important;
+
+        &:hover {
+            box-shadow: inset 100px 0px #db1c1c;
+            color: #ffffff;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none !important;
     }
 }

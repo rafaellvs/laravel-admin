@@ -10678,28 +10678,25 @@ a.text-dark:focus {
   padding: 2rem;
 }
 
-.admin .admin-content .btns {
-  display: flex;
-}
-
-.admin .admin-content .btns .btn {
+.admin .admin-content .btn-default {
   display: block;
-  width: 100px;
-  margin-top: 1rem;
+  font-family: monospace;
+  width: 150px;
+  border-radius: 5px;
+  margin: 1rem 0;
   height: 32px;
   background-color: #ffffff;
   color: #461cdb;
   border: 2px solid #461cdb;
-  border-radius: 5px;
   transition: box-shadow 0.5s, color 0.5s;
 }
 
-.admin .admin-content .btns .btn:hover {
-  box-shadow: inset 100px 0px #461cdb;
+.admin .admin-content .btn-default:hover {
+  box-shadow: inset 150px 0px #461cdb;
   color: #ffffff;
 }
 
-.admin .admin-content .btns .btn:focus {
+.admin .admin-content .btn-default:focus {
   outline: none;
 }
 
@@ -10755,11 +10752,11 @@ a.text-dark:focus {
 .admin .admin-content .posts .post .post-title {
   font-weight: bold;
   margin-right: 1rem;
+  width: 200px;
 }
 
 .admin .admin-content .posts .post .post-body {
-  max-width: 400px;
-  max-height: 50px;
+  width: 400px;
   margin-right: 1rem;
   overflow: hidden;
   white-space: nowrap;
@@ -10767,6 +10764,92 @@ a.text-dark:focus {
 }
 
 .admin .admin-content .posts .post .post-image {
-  max-width: 50px;
+  width: 50px;
+}
+
+.admin .admin-content .posts .post .btns {
+  display: flex;
+  flex: 1;
+  text-align: -webkit-right;
+}
+
+.admin .admin-content .post-show {
+  border: 1px dashed #797777;
+  max-width: 400px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.admin .admin-content .post-show img {
+  width: 250px;
+  margin-bottom: 1rem;
+}
+
+.admin .admin-content .btns-show {
+  display: flex;
+  justify-content: space-around;
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  transition: box-shadow 0.5s, color 0.5s;
+  margin: 0 0.5rem;
+}
+
+.btn.show {
+  color: #1c95db;
+  border: 2px solid #1c95db;
+}
+
+.btn.show:hover {
+  box-shadow: inset 100px 0px #1c95db;
+  color: #ffffff;
+}
+
+.btn.show:focus {
+  outline: none;
+}
+
+.btn.edit {
+  color: #dbce1c;
+  border: 2px solid #dbce1c;
+}
+
+.btn.edit:hover {
+  box-shadow: inset 100px 0px #dbce1c;
+  color: #ffffff;
+}
+
+.btn.edit:focus {
+  outline: none;
+}
+
+.btn.delete {
+  color: #db1c1c;
+  border: 2px solid #db1c1c;
+  width: 100px !important;
+}
+
+.btn.delete:hover {
+  box-shadow: inset 100px 0px #db1c1c;
+  color: #ffffff;
+}
+
+.btn.delete:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none !important;
 }
 
