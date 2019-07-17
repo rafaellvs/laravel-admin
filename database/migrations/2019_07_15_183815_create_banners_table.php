@@ -17,7 +17,7 @@ class CreateBannersTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('title');
-            $table->string('image');
+            $table->string('image')->default('#');
         });
     }
 

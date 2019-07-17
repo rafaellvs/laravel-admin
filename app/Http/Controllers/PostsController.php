@@ -16,12 +16,27 @@ class PostsController extends Controller
     }
 
     public function store() {
-        Post::create([
-            'title' => request('title'),
-            'body' => request('body'),
-            'image' => '/storage/'.request()->file('post-image')->store('post-images')
-        ]);
+        if(request()->has('post-image')) {
+            request()->validate([
+                'title' => 'required',
+                'body' => 'required',
+                'post-image' => 'image'
+            ]);
 
+            Post::create([
+                'title' => request('title'),
+                'body' => request('body'),
+                'image' => '/storage/'.request()->file('post-image')->store('post-images')
+            ]);
+        } else {
+            Post::create(
+                request()->validate([
+                    'title' => 'required',
+                    'body' => 'required'
+                ])
+            );
+        }
+            
         return redirect('/admin/posts')->with('created', true);
     }
 

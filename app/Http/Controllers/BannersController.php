@@ -16,11 +16,16 @@ class BannersController extends Controller
     }
 
     public function store() {
+        request()->validate([
+            'title' => 'required',
+            'banner-image' => 'required | image'
+        ]);
+        
         Banner::create([
             'title' => request('title'),
             'image' => '/storage/'.request()->file('banner-image')->store('banner-images')
         ]);
-
+    
         return redirect('/admin/banners')->with('created', true);
     }
 
