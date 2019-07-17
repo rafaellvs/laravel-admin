@@ -124,10 +124,14 @@
                     width: 50px;
                 }
 
+                .banner-image {
+                    width: 200px;
+                }
+
                 .btns {
                     display: flex;
                     flex: 1;
-                    text-align: -webkit-right;
+                    justify-content: flex-end;
                 }
             }
         }
@@ -153,7 +157,7 @@
     }
 }
 
-.btn {
+.bttn {
     display: block;
     width: 100px;
     height: 40px;

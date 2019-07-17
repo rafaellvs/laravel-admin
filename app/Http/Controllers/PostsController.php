@@ -8,7 +8,7 @@ use App\Post;
 class PostsController extends Controller
 {
     public function index() {
-        $posts = Post::all();
+        $posts = Post::all()->reverse();
 
         return view('admin.posts.index', [
             'posts' => $posts
@@ -43,6 +43,8 @@ class PostsController extends Controller
 
     public function update(Post $post) {
         $post->update(request(['title', 'body']));
+        $post->image = '/storage/'.request()->file('post-image')->store('post-images');
+        $post->save();
 
         return redirect('/admin/posts')->with('updated', true);
     }

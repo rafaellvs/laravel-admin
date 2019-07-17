@@ -10,8 +10,8 @@
         
         <input type="text" name="title" value="{{ $post->title }}">
         <textarea name="body">{{ $post->body }}</textarea>
-        <img src="{{ asset($post->image) }}" style="margin-top: 1rem;">
-        <input type="file" name="post-image" accept=".jpg, .jpeg, .png">
+        <img id="post-image" src="{{ asset($post->image) }}" style="margin-top: 1rem;">
+        <input type="file" name="post-image" accept=".jpg, .jpeg, .png" onchange="$('post-image').attr('src', window.URL.createObjectURL(this.files[0]))">
         <input type="submit" value="edit">
     </form>
 

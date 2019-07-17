@@ -2,20 +2,19 @@
 
 @section('content')
 
-    <h1>View post</h1>
+    <h1>View banner</h1>
 
     <div class="col-4 post-show">
-        <img src="{{ asset($post->image) }}">
-        <h4>{{ $post->title }}</h4>
-        <p>{{ $post->body }}</p>
+        <img src="{{ asset($banner->image) }}">
+        <h4>{{ $banner->title }}</h4>
     </div>
 
     <div class="btns-show">
-        <a href="/admin/posts/{{ $post->id }}/edit">
+        <a href="/admin/banners/{{ $banner->id }}/edit">
             <button type="button" class="bttn edit">edit</button>
         </a>
 
-        <form action="/admin/posts/{{ $post->id }}" method="POST">
+        <form action="/admin/banners/{{ $banner->id }}" method="POST">
             @csrf
             @method('DELETE')
 

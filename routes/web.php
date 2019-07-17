@@ -26,9 +26,13 @@ Route::patch('/admin/posts/{post}', 'PostsController@update');
 Route::delete('/admin/posts/{post}', 'PostsController@destroy');
 
 // Banners
-Route::get('/admin/banners', 'BannersController@get');
-Route::post('/admin/createbanner', 'BannersController@create');
-
+Route::get('/admin/banners', 'BannersController@index');
+Route::post('/admin/banners', 'BannersController@store');
+Route::get('/admin/banners/create', 'BannersController@create');
+Route::get('/admin/banners/{banner}', 'BannersController@show');
+Route::get('/admin/banners/{banner}/edit', 'BannersController@edit');
+Route::patch('/admin/banners/{banner}', 'BannersController@update');
+Route::delete('/admin/banners/{banner}', 'BannersController@destroy');
 
 Auth::routes();
 

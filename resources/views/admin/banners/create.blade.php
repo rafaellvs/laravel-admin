@@ -8,11 +8,12 @@
     <p style="color: green; margin: 0;">Banner successfully created.</p>
 @endif
 
-<form action="/admin/createbanner" method="POST" enctype="multipart/form-data">
+<form action="/admin/banners" method="POST" enctype="multipart/form-data">
     @csrf
 
     <input type="text" name="title" placeholder="Title">
-    <input type="file" name="banner-image" accept=".jpg, .jpeg, .png">
+    <img id="banner-image" src="" />
+    <input type="file" name="banner-image" accept=".jpg, .jpeg, .png" onchange="$('#banner-image').attr('src', window.URL.createObjectURL(this.files[0]))">
     <input type="submit" value="create">
 </form>
 
