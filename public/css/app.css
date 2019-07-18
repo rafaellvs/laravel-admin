@@ -10644,6 +10644,35 @@ a.text-dark:focus {
   }
 }
 
+.btn-default {
+  display: block;
+  width: 100px;
+  margin-top: 1rem;
+  height: 32px;
+  background-color: #ffffff;
+  color: #461cdb;
+  border: 2px solid #461cdb;
+  border-radius: 5px;
+  transition: box-shadow 0.5s, color 0.5s;
+}
+
+.btn-default:hover {
+  box-shadow: inset 100px 0px #461cdb;
+  color: #ffffff;
+}
+
+.btn-default:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -10659,27 +10688,6 @@ a.text-dark:focus {
   height: 32px;
   border-style: unset;
   padding: 0 5px;
-}
-
-.header button {
-  display: block;
-  width: 100px;
-  margin-top: 1rem;
-  height: 32px;
-  background-color: #ffffff;
-  color: #461cdb;
-  border: 2px solid #461cdb;
-  border-radius: 5px;
-  transition: box-shadow 0.5s, color 0.5s;
-}
-
-.header button:hover {
-  box-shadow: inset 100px 0px #461cdb;
-  color: #ffffff;
-}
-
-.header button:focus {
-  outline: none;
 }
 
 .footer {
@@ -10715,6 +10723,9 @@ a.text-dark:focus {
 }
 
 .posts .post {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   margin: 0.5rem;
   border: 1px dashed #797777;
   max-width: 400px;
@@ -10724,5 +10735,21 @@ a.text-dark:focus {
 .posts .post img {
   width: 250px;
   margin-bottom: 1rem;
+}
+
+.posts .post .post-body {
+  flex-grow: 1;
+}
+
+.posts .post .post-link {
+  align-self: flex-end;
+}
+
+.view-post {
+  padding: 2rem;
+}
+
+.view-post p {
+  margin-top: 1rem;
 }
 

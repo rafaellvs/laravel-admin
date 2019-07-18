@@ -17,4 +17,10 @@ class FrontController extends Controller
             'banners' => $banners
         ]);
     }
+
+    public function show(Post $post) {
+        return view('front.view-post', [
+            'post' => $post
+        ]);
+    }
 }

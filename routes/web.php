@@ -12,6 +12,7 @@
 
 
 Route::get('/', 'FrontController@index');
+Route::get('/view-post/{post}', 'FrontController@show');
 
 // Admin
 Route::post('/admin', 'AdminController@login');

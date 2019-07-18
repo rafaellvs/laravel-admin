@@ -2,31 +2,6 @@
     
 @section('content')
 
-<!-- HEADER -->
-<section class="container-fluid">
-    <div class="row header">
-        <div class="col-9">
-            <h1>HEADER</h1>
-        </div>
-        
-        <div class="col-3">
-            @if(session('loginFailed'))
-                <p style="color: red; font-weight: bold; margin: 0;">Dados incorretos.</p>
-            @endif
-            
-            <form action="/admin" method="POST">
-                {{ csrf_field() }}
-
-                <input type="email" name="email" placeholder="E-mail">
-
-                <input type="password" name="password" placeholder="Password">
-
-                <button type="submit">login</button>
-            </form>
-        </div>
-    </div>
-</section>
-
 <!-- CAROUSEL BANNERS -->
 <section class="container-fluid">
     <div class="row banners">
@@ -74,30 +49,17 @@
                 @else
                     @foreach ($posts as $post)
                         <div class="col-4 post">
-                            <img src="{{ asset($post->image) }}">
+                            <img src="{{ $post->image }}">
                             <h4>{{ $post->title }}</h4>
-                            <p>{{ $post->body }}</p>
+                            <p class="post-body">{{ $post->body }}</p>
+
+                            <a href="/view-post/{{ $post->id }}" class="post-link">
+                                <button type="button" class="btn-default">more...</button>
+                            </a>
                         </div>
                     @endforeach    
                 @endif
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<section class="container-fluid">
-    <div class="row footer">
-        <div class="col-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint blanditiis voluptate ad, provident aspernatur natus corporis asperiores omnis dignissimos quibusdam suscipit accusantium praesentium ea laboriosam rerum quisquam hic earum debitis.
-        </div>
-
-        <div class="col-2">
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Twister</a>
-            <a href="#" target="_blank">Linkedin</a>
-            <a href="#" target="_blank">Jansen</a>
-            <a href="#" target="_blank">Insta</a>
         </div>
     </div>
 </section>
