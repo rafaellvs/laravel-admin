@@ -46,10 +46,18 @@ class BannersController extends Controller
     }
 
     public function update(Banner $banner) {
-        $banner->update(request(['title']));
-        $banner->image = '/storage/'.request()->file('banner-image')->store('banner-images');
-        $banner->save();
+        $banner->update(
+            request()->validate([
+                'title' => 'required',
+                'banner-image' => 'image'
+            ])
+        );  
 
+        if(request()->has('banner-image')) {
+            $banner->image = '/storage/'.request()->file('banner-image')->store('banner-images');
+            $banner->save();
+        }
+        
         return redirect('/admin/banners')->with('updated', true);
     }
 

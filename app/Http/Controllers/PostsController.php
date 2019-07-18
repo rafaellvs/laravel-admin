@@ -57,10 +57,23 @@ class PostsController extends Controller
     }
 
     public function update(Post $post) {
-        $post->update(request(['title', 'body']));
-        $post->image = '/storage/'.request()->file('post-image')->store('post-images');
-        $post->save();
+        if(request()->has('remove-img')) {
+            $post->update(['image' => '']);
+        }
+        
+        $post->update(
+            request()->validate([
+                'title' => 'required',
+                'body' => 'required',
+                'post-image' => 'image'
+            ])
+        );
 
+        if(request()->has('post-image')) {
+            $post->image = '/storage/'.request()->file('post-image')->store('post-images');
+            $post->save();
+        }
+        
         return redirect('/admin/posts')->with('updated', true);
     }
 

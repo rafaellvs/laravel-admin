@@ -22,7 +22,7 @@
             </div>
         </div>
         @if($posts->isEmpty())
-            <div class="col-12">
+            <div class="col-12" style="padding: 0;">
                 <p>No posts on database.</p>
             </div>
         @else

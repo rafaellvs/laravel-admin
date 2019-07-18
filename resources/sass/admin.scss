@@ -156,6 +156,41 @@
             margin-top: 1rem;
         }
     }
+
+    .preview-image {
+        position: relative;
+        display: inline-block;
+
+        .btn-remove {
+            position: absolute;
+            right: 0.3rem;
+            top: 1.3rem;
+            width: 32px;
+            height: 32px;
+            line-height: 0;
+            border-radius: 100%;
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid #726868;
+            color: #726868;
+            background-color: transparent;
+            transition: color 0.2s, border 0.2s;
+
+            &:hover {
+                color: #ffffff;
+                border: 2px solid #ffffff;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input[type="checkbox"] {
+            height: 0;
+            margin: 0;
+        }
+    }
 }
 
 .bttn {

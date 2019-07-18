@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/admin.css">
     <script src="/js/admin.js"></script>
+    @stack('scripts')
 </head>
 <body>
     <section class="container-fluid">

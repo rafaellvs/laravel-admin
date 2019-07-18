@@ -13,13 +13,32 @@
     <textarea name="body" placeholder="Body"></textarea>
     @error('body') <p style="color: red;">{{ $message }}</p> @enderror
 
-    <img id="post-image" src=""  style="margin-top: 1rem;"/>
+    <div class="preview-image">
+        <img id="post-image" src="" style="margin-top: 1rem;"/>
+        <button type="button" class="btn-remove d-none">x</button>
+    </div>
+    
+    <input id="file-upload" type="file" name="post-image" accept=".jpg, .jpeg, .png">
     @error('post-image') <p style="color: red;">{{ $message }}</p> @enderror
-
-    <input type="file" name="post-image" accept=".jpg, .jpeg, .png" 
-    onchange="$('#post-image').attr('src', window.URL.createObjectURL(this.files[0]))">
 
     <input type="submit" value="create">
 </form>
 
 @stop
+
+@push('scripts')
+    <script>
+        $(document).ready(function(){
+            $('.btn-remove').on('click', function(){
+                $('#post-image').attr('src', '')
+                $('#file-upload').val("")
+                $(this).addClass('d-none')
+            })
+
+            $('#file-upload').on('change', function() {
+                $('#post-image').attr('src', window.URL.createObjectURL(this.files[0]))
+                $('.btn-remove').removeClass('d-none')
+            })
+        })
+    </script>
+@endpush
