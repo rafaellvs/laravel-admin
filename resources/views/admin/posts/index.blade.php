@@ -27,7 +27,7 @@
             </div>
         @else
             @foreach ($posts as $post)
-                <div class="col-8 post">
+                <div class="col-12 post">
                     <div class="post-title">
                         {{ $post->title }}
                     </div>
@@ -39,7 +39,11 @@
                     <div class="post-image">
                         <img src="{{ asset($post->image) }}" class="post-image" />
                     </div>
-            
+
+                    <div class="post-author">
+                        <h6 style="margin: 0 0 0 1rem">{{ $post->user_name }}</h6>
+                    </div>
+                    
                     <div class="btns">
                         <a href="/admin/posts/{{ $post->id }}">
                             <button type="button" class="bttn show">show</button>

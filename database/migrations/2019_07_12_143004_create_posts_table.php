@@ -17,8 +17,12 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             $table->string('image')->default('');
+            $table->unsignedInteger('user_id');
+            $table->string('user_name');
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

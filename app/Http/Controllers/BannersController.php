@@ -7,6 +7,10 @@ use App\Banner;
 
 class BannersController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     public function index() {
         $banners = Banner::all()->reverse();
 

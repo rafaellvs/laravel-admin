@@ -30,10 +30,20 @@
                 </a>
             </div>
             
-            <div class="col-9 admin-content">
+            <div class="col-8 admin-content">
                 <h1>Admin panel</h1>
                 
                 @yield('content')
+            </div>
+
+            <div class="col-2 logout">
+                <p>Logged is as {{ auth()->user()->name }}</p>
+
+                <form action="/logout" method="POST">
+                    @csrf
+                    
+                    <button type="submit" class="bttn show" style="margin: 0;">logout</button>
+                </form>
             </div>
         </div>
     </section>

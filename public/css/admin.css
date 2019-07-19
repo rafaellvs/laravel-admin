@@ -10783,6 +10783,7 @@ a.text-dark:focus {
   max-width: 400px;
   padding: 1rem;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .admin .admin-content .post-show img {
@@ -10790,11 +10791,28 @@ a.text-dark:focus {
   margin-bottom: 1rem;
 }
 
+.admin .admin-content .post-show.banner {
+  max-width: unset;
+}
+
+.admin .admin-content .post-show.banner img {
+  width: auto;
+}
+
+.admin .admin-content .post-show p {
+  margin: 0;
+}
+
 .admin .admin-content .btns-show {
   display: flex;
   justify-content: space-around;
   max-width: 400px;
   margin-top: 1rem;
+}
+
+.admin .admin-content .btns-show.banner {
+  max-width: unset;
+  justify-content: center;
 }
 
 .admin .preview-image {
@@ -10830,6 +10848,10 @@ a.text-dark:focus {
 .admin .preview-image input[type=checkbox] {
   height: 0;
   margin: 0;
+}
+
+.admin .logout {
+  padding: 2rem;
 }
 
 .bttn {

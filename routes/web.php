@@ -15,6 +15,7 @@ Route::get('/', 'FrontController@index');
 Route::get('/view-post/{post}', 'FrontController@show');
 
 // Admin
+Route::get('/admin', 'AdminController@index');
 Route::post('/admin', 'AdminController@login');
 
 // Posts
@@ -36,5 +37,3 @@ Route::patch('/admin/banners/{banner}', 'BannersController@update');
 Route::delete('/admin/banners/{banner}', 'BannersController@destroy');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

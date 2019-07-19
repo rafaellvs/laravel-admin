@@ -6,7 +6,8 @@
         <div class="row justify-content-center">
             <div class="col-8 view-post">
                 <h1>{{ $post->title }}</h1>
-                <h6>created at: {{ $post->created_at->format('d/m/Y H:i') }}</h6>
+                <h6>author: {{ $post->user_name }}</h6>
+                <h6>created at: {{ $post->created_at->format('d/m/Y H\hi') }}</h6>
                 
                 <img src="{{ $post->image }}" />
 

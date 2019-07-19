@@ -4,12 +4,12 @@
 
     <h1>View banner</h1>
 
-    <div class="col-4 post-show">
+    <div class="post-show banner">
         <img src="{{ asset($banner->image) }}">
         <h4>{{ $banner->title }}</h4>
     </div>
 
-    <div class="btns-show">
+    <div class="btns-show banner">
         <a href="/admin/banners/{{ $banner->id }}/edit">
             <button type="button" class="bttn edit">edit</button>
         </a>

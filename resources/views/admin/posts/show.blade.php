@@ -5,9 +5,11 @@
     <h1>View post</h1>
 
     <div class="col-4 post-show">
-        <img src="{{ asset($post->image) }}">
+        <img src="{{ $post->image }}">
         <h4>{{ $post->title }}</h4>
-        <p>{{ $post->body }}</p>
+        <p style="margin-bottom: 1rem;">{{ $post->body }}</p>
+        <p><strong>author:</strong> {{ $post->user_name }}</p>
+        <p><strong>created at:</strong> {{ $post->created_at->format('d/m/Y H\hi') }}</p>
     </div>
 
     <div class="btns-show">

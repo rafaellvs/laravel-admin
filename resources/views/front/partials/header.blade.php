@@ -7,7 +7,7 @@
         </div>
         
         <div class="col-3">
-            @if(session('loginFailed'))
+            {{-- @if(session('loginFailed'))
                 <p style="color: red; font-weight: bold; margin: 0;">Dados incorretos.</p>
             @endif
             
@@ -19,7 +19,7 @@
                 <input type="password" name="password" placeholder="Password">
 
                 <button type="submit" class="btn-default">login</button>
-            </form>
+            </form> --}}
         </div>
     </div>
 </section>

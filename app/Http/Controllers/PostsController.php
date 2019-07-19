@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Post;
 
 class PostsController extends Controller
-{
+{   
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $posts = Post::all()->reverse();
 
@@ -17,24 +21,27 @@ class PostsController extends Controller
 
     public function store() {
         if(request()->has('post-image')) {
-            request()->validate([
+            $attributes = request()->validate([
                 'title' => 'required',
                 'body' => 'required',
                 'post-image' => 'image'
             ]);
 
-            Post::create([
-                'title' => request('title'),
-                'body' => request('body'),
-                'image' => '/storage/'.request()->file('post-image')->store('post-images')
-            ]);
+            $attributes['user_id'] = auth()->id();
+            $attributes['user_name'] = auth()->user()->name;
+            $attributes['image'] = '/storage/'.request()->file('post-image')->store('post-images');
+            
+            Post::create($attributes);
         } else {
-            Post::create(
-                request()->validate([
-                    'title' => 'required',
-                    'body' => 'required'
-                ])
-            );
+            $attributes = request()->validate([
+                'title' => 'required',
+                'body' => 'required',
+            ]);
+
+            $attributes['user_id'] = auth()->id();
+            $attributes['user_name'] = auth()->user()->name;
+
+            Post::create($attributes);
         }
             
         return redirect('/admin/posts')->with('created', true);
