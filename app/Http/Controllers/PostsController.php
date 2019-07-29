@@ -20,26 +20,25 @@ class PostsController extends Controller
     }
 
     public function store() {
+        $attributes['user_id'] = auth()->id();
+        $attributes['user_name'] = auth()->user()->name;
+        
         if(request()->has('post-image')) {
-            $attributes = request()->validate([
+            $attributes += request()->validate([
                 'title' => 'required',
                 'body' => 'required',
                 'post-image' => 'image'
             ]);
 
-            $attributes['user_id'] = auth()->id();
-            $attributes['user_name'] = auth()->user()->name;
             $attributes['image'] = '/storage/'.request()->file('post-image')->store('post-images');
             
             Post::create($attributes);
+            
         } else {
-            $attributes = request()->validate([
+            $attributes += request()->validate([
                 'title' => 'required',
                 'body' => 'required',
             ]);
-
-            $attributes['user_id'] = auth()->id();
-            $attributes['user_name'] = auth()->user()->name;
 
             Post::create($attributes);
         }
@@ -58,6 +57,8 @@ class PostsController extends Controller
     }
 
     public function edit(Post $post) {
+        $this->authorize('edit', $post);
+        
         return view('admin.posts.edit', [
             'post' => $post
         ]);
@@ -85,6 +86,8 @@ class PostsController extends Controller
     }
 
     public function destroy(Post $post) {
+        $this->authorize('edit', $post);
+        
         $post->delete();
 
         return redirect('/admin/posts')->with('deleted', true);

@@ -42,7 +42,7 @@
                 <form action="/logout" method="POST">
                     @csrf
                     
-                    <button type="submit" class="bttn show" style="margin: 0;">logout</button>
+                    <button type="submit" class="bttn show">logout</button>
                 </form>
             </div>
         </div>

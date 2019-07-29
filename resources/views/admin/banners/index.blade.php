@@ -4,25 +4,26 @@
 
 <section class="container-fluid">
     <div class="row posts">
-        <div class="col-12" style="padding: 0;">
+        <div class="col-12 no-padding">
             <h2>Banners</h2>
 
             @if(session('created'))
-                <p style="color: green; margin: 0;">Banner successfully created.</p>
+                <p class="success">Banner successfully created.</p>
             @elseif(session('updated'))
-                <p style="color: green; margin: 0;">Banner successfully updated.</p>
+                <p class="success">Banner successfully updated.</p>
             @elseif(session('deleted'))
-                <p style="color: red; margin: 0;">Banner successfully deleted.</p>
+                <p class="error">Banner successfully deleted.</p>
             @endif
 
-            <div style="width: 150px;">
+            <div>
                 <a href="/admin/banners/create">
                     <button type="button" class="btn-default">create</button>
                 </a>
             </div>
         </div>
+
         @if($banners->isEmpty())
-            <div class="col-12">
+            <div class="col-12 no-padding">
                 <p>No banners on database.</p>
             </div>
         @else

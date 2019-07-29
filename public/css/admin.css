@@ -10644,6 +10644,76 @@ a.text-dark:focus {
   }
 }
 
+.bttn {
+  display: block;
+  font-family: monospace;
+  width: 100px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  transition: box-shadow 0.5s, color 0.5s;
+  margin: 0 0.5rem;
+}
+
+.bttn.show {
+  color: #1c95db;
+  border: 2px solid #1c95db;
+}
+
+.bttn.show:hover {
+  box-shadow: inset 100px 0px #1c95db;
+  color: #ffffff;
+}
+
+.bttn.edit {
+  color: #dbce1c;
+  border: 2px solid #dbce1c;
+}
+
+.bttn.edit:hover {
+  box-shadow: inset 100px 0px #dbce1c;
+  color: #ffffff;
+}
+
+.bttn.delete {
+  color: #db1c1c;
+  border: 2px solid #db1c1c;
+  width: 100px !important;
+}
+
+.bttn.delete:hover {
+  box-shadow: inset 100px 0px #db1c1c;
+  color: #ffffff;
+}
+
+.bttn:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.success {
+  color: #32af51;
+  font-weight: bold;
+  margin: 0;
+}
+
+.error {
+  color: #d62f2f;
+  font-weight: bold;
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
 .admin .admin-menu {
   flex-flow: column;
   background: #020024;
@@ -10679,7 +10749,6 @@ a.text-dark:focus {
 }
 
 .admin .admin-content .btn-default {
-  display: block;
   font-family: monospace;
   width: 150px;
   border-radius: 5px;
@@ -10724,24 +10793,6 @@ a.text-dark:focus {
   height: 200px;
 }
 
-.admin .admin-content form input[type=submit] {
-  margin-top: 1rem;
-  height: 32px;
-  background-color: #ffffff;
-  color: #461cdb;
-  border: 2px solid #461cdb;
-  transition: box-shadow 0.5s, color 0.5s;
-}
-
-.admin .admin-content form input[type=submit]:hover {
-  box-shadow: inset 250px 0px #461cdb;
-  color: #ffffff;
-}
-
-.admin .admin-content form input[type=submit]:focus {
-  outline: none;
-}
-
 .admin .admin-content .posts .post {
   display: flex;
   align-items: center;
@@ -10766,6 +10817,10 @@ a.text-dark:focus {
 
 .admin .admin-content .posts .post .post-image {
   width: 50px;
+}
+
+.admin .admin-content .posts .post .post-author {
+  margin-left: 1rem;
 }
 
 .admin .admin-content .posts .post .banner-image {
@@ -10818,6 +10873,7 @@ a.text-dark:focus {
 .admin .preview-image {
   position: relative;
   display: inline-block;
+  margin-top: 1rem;
 }
 
 .admin .preview-image .btn-remove {
@@ -10854,64 +10910,7 @@ a.text-dark:focus {
   padding: 2rem;
 }
 
-.bttn {
-  display: block;
-  width: 100px;
-  height: 40px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  transition: box-shadow 0.5s, color 0.5s;
-  margin: 0 0.5rem;
-}
-
-.bttn.show {
-  color: #1c95db;
-  border: 2px solid #1c95db;
-}
-
-.bttn.show:hover {
-  box-shadow: inset 100px 0px #1c95db;
-  color: #ffffff;
-}
-
-.bttn.show:focus {
-  outline: none;
-}
-
-.bttn.edit {
-  color: #dbce1c;
-  border: 2px solid #dbce1c;
-}
-
-.bttn.edit:hover {
-  box-shadow: inset 100px 0px #dbce1c;
-  color: #ffffff;
-}
-
-.bttn.edit:focus {
-  outline: none;
-}
-
-.bttn.delete {
-  color: #db1c1c;
-  border: 2px solid #db1c1c;
-  width: 100px !important;
-}
-
-.bttn.delete:hover {
-  box-shadow: inset 100px 0px #db1c1c;
-  color: #ffffff;
-}
-
-.bttn.delete:focus {
-  outline: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none !important;
+.admin .logout .bttn {
+  margin: 0;
 }
 

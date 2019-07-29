@@ -9,14 +9,15 @@
         @method('PATCH')
         
         <input type="text" name="title" value="{{ $banner->title }}">
-        @error('title') <p style="color: red;">{{ $message }}</p> @enderror
+        @error('title') <p class="error">{{ $message }}</p> @enderror
 
-        <img id="banner-image" src="{{ asset($banner->image) }}" style="margin-top: 1rem;">
+        <img id="banner-image" src="{{ asset($banner->image) }}" class="banner-image">
 
-        <input type="file" name="banner-image" accept=".jpg, .jpeg, .png" onchange="$('#banner-image').attr('src', window.URL.createObjectURL(this.files[0]))">
-        @error('banner-image') <p style="color: red;">{{ $message }}</p> @enderror
+        <input type="file" name="banner-image" accept=".jpg, .jpeg, .png" 
+        onchange="$('#banner-image').attr('src', window.URL.createObjectURL(this.files[0]))">
+        @error('banner-image') <p class="error">{{ $message }}</p> @enderror
 
-        <input type="submit" value="edit">
+        <input type="submit" value="edit" class="btn-default">
     </form>
 
 @stop

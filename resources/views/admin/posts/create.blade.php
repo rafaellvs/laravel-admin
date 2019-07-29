@@ -8,10 +8,10 @@
     @csrf
 
     <input type="text" name="title" placeholder="Title">
-    @error('title') <p style="color: red;">{{ $message }}</p> @enderror
+    @error('title') <p class="error">{{ $message }}</p> @enderror
 
     <textarea name="body" placeholder="Body"></textarea>
-    @error('body') <p style="color: red;">{{ $message }}</p> @enderror
+    @error('body') <p class="error">{{ $message }}</p> @enderror
 
     <div class="preview-image">
         <img id="post-image" src="" style="margin-top: 1rem;"/>
@@ -19,9 +19,9 @@
     </div>
     
     <input id="file-upload" type="file" name="post-image" accept=".jpg, .jpeg, .png">
-    @error('post-image') <p style="color: red;">{{ $message }}</p> @enderror
+    @error('post-image') <p class="error">{{ $message }}</p> @enderror
 
-    <input type="submit" value="create">
+    <input type="submit" value="create" class="btn-default">
 </form>
 
 @stop

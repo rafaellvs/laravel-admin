@@ -9,23 +9,23 @@
         @method('PATCH')
         
         <input type="text" name="title" value="{{ $post->title }}">
-        @error('title') <p style="color: red;">{{ $message }}</p> @enderror
+        @error('title') <p class="error">{{ $message }}</p> @enderror
 
         <textarea name="body">{{ $post->body }}</textarea>
-        @error('body') <p style="color: red;">{{ $message }}</p> @enderror
+        @error('body') <p class="error">{{ $message }}</p> @enderror
 
         <div class="preview-image">
-            <img id="post-image" src="{{ $post->image }}" style="margin-top: 1rem;">
+            <img id="post-image" src="{{ $post->image }}">
 
             <button type="button" class="btn-remove">x</button>
 
-            <input type="checkbox" id="remove-img" name="remove-img" style="width: 1px;">
+            <input type="checkbox" id="remove-img" name="remove-img">
         </div>
 
         <input type="file" id="image-uploader" name="post-image" accept=".jpg, .jpeg, .png">
-        @error('post-image') <p style="color: red;">{{ $message }}</p> @enderror
+        @error('post-image') <p class="error">{{ $message }}</p> @enderror
 
-        <input type="submit" value="edit">
+        <input type="submit" value="edit" class="btn-default">
     </form>
 
 @stop
