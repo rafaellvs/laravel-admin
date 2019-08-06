@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="container-fluid">
-    <div class="row posts">
+    <div class="row resources">
         <div class="col-12 no-padding">
             <h2>Posts</h2>
 
@@ -28,20 +28,20 @@
             </div>
         @else
             @foreach ($posts as $post)
-                <div class="col-12 post">
-                    <div class="post-title">
+                <div class="col-12 resource">
+                    <div class="title">
                         {{ $post->title }}
                     </div>
 
-                    <div class="post-body">
+                    <div class="body">
                         {{ $post->body }}
                     </div>
 
-                    <div class="post-image">
-                        <img src="{{ asset($post->image) }}" class="post-image" />
+                    <div>
+                        <img src="{{ asset($post->image) }}" class="image" />
                     </div>
 
-                    <div class="post-author">
+                    <div class="author">
                         <h6>{{ $post->user_name }}</h6>
                     </div>
                     

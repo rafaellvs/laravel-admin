@@ -1,6 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Global
+// Buttons: show, edit, delete
 .bttn {
     display: block;
     font-family: monospace;
@@ -56,6 +57,7 @@ a {
     }
 }
 
+// Form message errors
 .success {
     color: #32af51;
     font-weight: bold;
@@ -71,6 +73,7 @@ a {
 .no-padding {
     padding: 0;
 }
+
 // Admin
 .admin {
     .admin-menu {
@@ -127,6 +130,7 @@ a {
             }
         }
 
+        // Create and edit forms
         form {
             input, textarea, button {
                 display: block;
@@ -151,21 +155,22 @@ a {
             }
         }
 
-        .posts {
-            .post {
+        // Resource index page
+        .resources {
+            .resource {
                 display: flex;
                 align-items: center;
                 border: 1px dashed #726969;
                 padding: 1rem;
                 margin: 0.5rem 0;
 
-                .post-title {
+                .title {
                     font-weight: bold;
                     margin-right: 1rem;
                     width: 200px;
                 }
 
-                .post-body {
+                .body {
                     width: 400px;
                     margin-right: 1rem;
                     overflow: hidden;
@@ -173,15 +178,16 @@ a {
                     text-overflow: ellipsis;
                 }
 
-                .post-image {
+                .image {
                     width: 50px;
+
+                    &.banner {
+                        width: 200px;
+                    }
                 }
 
-                .post-author {
+                .author {
                     margin-left: 1rem;
-                }
-                .banner-image {
-                    width: 200px;
                 }
 
                 .btns {
@@ -192,26 +198,18 @@ a {
             }
         }
 
-        .post-show {
+        // Resource single view
+        .resource-show {
             border: 1px dashed #797777;
-            max-width: 400px;
             padding: 1rem;
             text-align: center;
             margin-top: 2rem;
     
             img {
-                width: 250px;
                 margin-bottom: 1rem;
+                width: 100%;
             }
-
-            &.banner {
-                max-width: unset;
-
-                img {
-                    width: auto;
-                }
-            }
-
+            
             p {
                 margin: 0;
             }
@@ -220,7 +218,6 @@ a {
         .btns-show {
             display: flex;
             justify-content: space-around;
-            max-width: 400px;
             margin-top: 1rem;
 
             &.banner {
@@ -230,6 +227,7 @@ a {
         }
     }
 
+    // Image preview from edit page
     .preview-image {
         position: relative;
         display: inline-block;

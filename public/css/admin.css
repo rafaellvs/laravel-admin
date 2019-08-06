@@ -10793,7 +10793,7 @@ a:hover {
   height: 200px;
 }
 
-.admin .admin-content .posts .post {
+.admin .admin-content .resources .resource {
   display: flex;
   align-items: center;
   border: 1px dashed #726969;
@@ -10801,13 +10801,13 @@ a:hover {
   margin: 0.5rem 0;
 }
 
-.admin .admin-content .posts .post .post-title {
+.admin .admin-content .resources .resource .title {
   font-weight: bold;
   margin-right: 1rem;
   width: 200px;
 }
 
-.admin .admin-content .posts .post .post-body {
+.admin .admin-content .resources .resource .body {
   width: 400px;
   margin-right: 1rem;
   overflow: hidden;
@@ -10815,53 +10815,43 @@ a:hover {
   text-overflow: ellipsis;
 }
 
-.admin .admin-content .posts .post .post-image {
+.admin .admin-content .resources .resource .image {
   width: 50px;
 }
 
-.admin .admin-content .posts .post .post-author {
-  margin-left: 1rem;
-}
-
-.admin .admin-content .posts .post .banner-image {
+.admin .admin-content .resources .resource .image.banner {
   width: 200px;
 }
 
-.admin .admin-content .posts .post .btns {
+.admin .admin-content .resources .resource .author {
+  margin-left: 1rem;
+}
+
+.admin .admin-content .resources .resource .btns {
   display: flex;
   flex: 1;
   justify-content: flex-end;
 }
 
-.admin .admin-content .post-show {
+.admin .admin-content .resource-show {
   border: 1px dashed #797777;
-  max-width: 400px;
   padding: 1rem;
   text-align: center;
   margin-top: 2rem;
 }
 
-.admin .admin-content .post-show img {
-  width: 250px;
+.admin .admin-content .resource-show img {
   margin-bottom: 1rem;
+  width: 100%;
 }
 
-.admin .admin-content .post-show.banner {
-  max-width: unset;
-}
-
-.admin .admin-content .post-show.banner img {
-  width: auto;
-}
-
-.admin .admin-content .post-show p {
+.admin .admin-content .resource-show p {
   margin: 0;
 }
 
 .admin .admin-content .btns-show {
   display: flex;
   justify-content: space-around;
-  max-width: 400px;
   margin-top: 1rem;
 }
 
